@@ -1,6 +1,5 @@
 import { useState} from "react";
 import { Wrapper } from "./App.styled";
-
 import { Section } from "components/Section/Section";
 import { FeedbackOptions}  from "components/FeedbackOptions/FeedBackOptions";
 import { Statistics } from 'components/Statistics/Statistics'
@@ -53,3 +52,4 @@ const App = () => {
 };
 
 export default App;
+ 
