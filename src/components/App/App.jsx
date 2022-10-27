@@ -5,7 +5,7 @@ import { FeedbackOptions}  from "components/FeedbackOptions/FeedBackOptions";
 import { Statistics } from 'components/Statistics/Statistics'
 import { Notification } from 'components/Notification/Notification'
 
-const App = () => {
+export const App = () => {
  const [good, setGood] = useState(0)
  const [neutral, setNeutral] = useState(0)
  const [bad, setBad] = useState(0)
@@ -51,5 +51,42 @@ const App = () => {
   );
 };
 
-export default App;
- 
+
+// class App extends Component {
+//   state = {
+//     good: 0,
+//     neutral: 0,
+//     bad: 0
+//   };
+  
+//   onLeaveFeedback = (option) => {
+//     this.setState( prevState => ({[option]: prevState[option] + 1}))
+//   }
+
+//   countTotalFeedback() {
+//   return Object.values(this.state).reduce((a, b) => (a+b), 0)
+//   }
+  
+//   countPositiveFeedbackPercentage() {
+//   return (this.state.good/this.countTotalFeedback()*100).toFixed(0)
+//   }
+
+//   render() {
+//   const { good, neutral, bad } = this.state;
+//   const total = this.countTotalFeedback();
+  
+//   return (
+//     <Wrapper>
+//       <Section title="Please leave feedback">
+//       <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback}/>
+//       {total > 0 ? 
+//       (<Statistics good={good} neutral={neutral} bad={bad} total={total} 
+//       positiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}/>) :
+//       (<Notification message="There is no feedback"/>)}
+//       </Section>
+//     </Wrapper>
+//   );
+// };
+// };
+
+// export default App;
