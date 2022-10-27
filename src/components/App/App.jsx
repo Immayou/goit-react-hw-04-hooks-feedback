@@ -51,7 +51,6 @@ export const App = () => {
   );
 };
 
-
 // class App extends Component {
 //   state = {
 //     good: 0,
