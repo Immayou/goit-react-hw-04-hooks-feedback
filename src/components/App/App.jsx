@@ -10,7 +10,7 @@ export const App = () => {
  const [neutral, setNeutral] = useState(0)
  const [bad, setBad] = useState(0)
 
- const data = {good, neutral, bad}
+ const dataValues = {good, neutral, bad}
 
   const onHandlerFeedback = (option) => {
    switch (option) {
@@ -29,7 +29,7 @@ export const App = () => {
   }
 
   const countTotalFeedback = () => {
-  return Object.values(data).reduce((a, b) => (a+b), 0)
+  return Object.values(dataValues).reduce((a, b) => (a+b), 0)
   }
   
   const countPositiveFeedbackPercentage = () => {
@@ -41,7 +41,7 @@ export const App = () => {
   return (
     <Wrapper>
       <Section title="Please leave feedback">
-      <FeedbackOptions options={Object.keys(data)} onLeaveFeedback={onHandlerFeedback}/>
+      <FeedbackOptions options={Object.keys(dataValues)} onLeaveFeedback={onHandlerFeedback}/>
       {total > 0 ? 
       (<Statistics good={good} neutral={neutral} bad={bad} total={total} 
       positiveFeedbackPercentage={countPositiveFeedbackPercentage()}/>) :
